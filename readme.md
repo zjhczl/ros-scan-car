@@ -1,17 +1,16 @@
-# 安装rosbridge
+## 安装rosbridge
 ```
 sudo apt-get install ros-<rosdistro>-rosbridge-server
 roslaunch rosbridge_server rosbridge_websocket.launch
 ```
-# 其他命令
+## catkin build
 ```
-roslaunch ouster_ros driver.launch sensor_hostname:=192.168.100.2
-roslaunch fixposition_driver_ros1 tcp.launch
-roslaunch slope_calculation slope_calculation.launch
-roslaunch rosbridge_server rosbridge_websocket.launch
+sudo apt update
+sudo apt install python3-pip
+sudo pip install catkin-tools
 ```
 ## rtk2
-###192 环境配置
+### 环境配置
 ```
  sudo apt update
  sudo apt install -y build-essential cmake
@@ -46,4 +45,10 @@ sudo apt install -y         \
     libcurl4-openssl-dev    \
     cmake
 ```
-
+# 其他命令
+```
+roslaunch ouster_ros driver.launch sensor_hostname:=192.168.100.2
+roslaunch fixposition_driver_ros1 tcp.launch
+roslaunch slope_calculation slope_calculation.launch
+roslaunch rosbridge_server rosbridge_websocket.launch
+```

@@ -1,0 +1,19 @@
+<launch>
+  <arg name="ring_id" default="64"/>
+  <arg name="do_debug" default="false"/>
+  <arg name="height_results_scale" default="0.5"/> <!-- 对于结果进行平滑的阈值,越大则输出结果越大 范围(0.5-1.0)-->
+  <arg name="slope_angle_results_scale" default="0.5"/> <!-- 对于结果进行平滑的阈值,越大则输出结果越大 范围(0.5-1.0)-->
+  <arg name="slope_dis_results_scale" default="0.5"/> <!-- 对于结果进行平滑的阈值,越大则输出结果越大 范围(0.5-1.0)-->
+  <arg name="slope_thresh" default="0.03"/><!-- 坡度过滤阈值，数值越大，输出的结果越大 （0.01-0.05)-->
+  <node pkg="slope_calculation" type="slope_calculation" name="slope_calculation" output="screen">
+    <param name="ring_id" type= "double" value="$(arg ring_id)"/>
+    <param name="do_debug" value="$(arg do_debug)"/>
+    <param name="height_results_scale" value="$(arg height_results_scale)"/>
+    <param name="slope_angle_results_scale" value="$(arg slope_angle_results_scale)"/>
+    <param name="slope_dis_results_scale" value="$(arg slope_dis_results_scale)"/>
+    <param name="slope_thresh" value="$(arg slope_thresh)"/>
+  </node>
+  
+  <arg name ="viz" default = "true" doc="whether to run a rviz"/>
+  <node if="$(arg viz)" pkg="rviz" name="rviz" type="rviz" args="-d $(find slope_calculation)/rviz/slope.rviz"/>
+</launch>

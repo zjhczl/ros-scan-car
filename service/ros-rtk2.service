@@ -1,0 +1,13 @@
+[Unit]
+Description=ros-rtk2
+After=network.target ros-master.service
+Requires=ros-master.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source /opt/ros/noetic/setup.bash; source /home/neardi/catkin_ws/devel/setup.bash; roslaunch fixposition_driver_ros1 tcp.launch'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

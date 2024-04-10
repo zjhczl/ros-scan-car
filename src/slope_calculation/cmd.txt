@@ -1,0 +1,8 @@
+启动服务
+roslaunch rosbridge_server rosbridge_websocket.launch
+播放数据
+rosbag play ros-zhixian-9_2024-03-27-20-22-50.bag --topic /ouster/points /fixposition/navsatfix /fixposition/ypr
+远程获取bag包
+http://gis.breton.top:24088/
+在线调试
+gis.breton.top:38080

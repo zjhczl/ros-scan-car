@@ -1,0 +1,12 @@
+[Unit]
+Description=ros-master
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source /opt/ros/noetic/setup.bash; roscore'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

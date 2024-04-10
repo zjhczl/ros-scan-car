@@ -1,0 +1,13 @@
+[Unit]
+Description=ros-slope
+After=network.target ros-master.service
+Requires=ros-master.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source /opt/ros/noetic/setup.bash; source /home/neardi/catkin_ws/devel/setup.bash; roslaunch slope_calculation slope_calculation.launch'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

@@ -5,7 +5,7 @@ Requires=ros-master.service
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c 'source /opt/ros/noetic/setup.bash; source /home/neardi/catkin_ws/devel/setup.bash; roslaunch ouster_ros_driver.launch sensor_hostname:=192.168.100.2'
+ExecStart=/bin/bash -c 'source /opt/ros/noetic/setup.bash; source /home/neardi/catkin_ws/devel/setup.bash; roslaunch ouster_ros driver.launch sensor_hostname:=192.168.100.2'
 Restart=on-failure
 
 [Install]

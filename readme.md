@@ -34,8 +34,8 @@ echo \"192.168.100.2/24\" | http PUT http://192.168.2.13/api/v1/system/network/i
 ### 雷达ros环境配置
 ```
 sudo apt install -y                     \
-    ros-$ROS_DISTRO-pcl-ros             \
-    ros-$ROS_DISTRO-rviz
+    ros-noetic-pcl-ros             \
+    ros-noetic-rviz
     
 sudo apt install -y         \
     build-essential         \
@@ -44,6 +44,8 @@ sudo apt install -y         \
     libspdlog-dev           \
     libcurl4-openssl-dev    \
     cmake
+    
+
 ```
 # 其他命令
 ```

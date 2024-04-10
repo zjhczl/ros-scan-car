@@ -10,7 +10,13 @@ roslaunch fixposition_driver_ros1 tcp.launch
 roslaunch slope_calculation slope_calculation.launch
 roslaunch rosbridge_server rosbridge_websocket.launch
 ```
-
+## 环境配置
+```
+ sudo apt update
+ sudo apt install -y build-essential cmake
+ sudo apt install -y libeigen3-dev
+ sudo apt install -y ros-noetic-tf ros-noetic-eigen-conversions
+```
 ## 雷达配置
 ### 查找雷达ip
 ```
@@ -25,3 +31,5 @@ echo \"目标.设置.静态.IP/24\" | http PUT http://雷达.当前.IP.地址]/a
 echo \"192.168.100.2/24\" | http PUT http://192.168.2.13/api/v1/system/network/ipv4/override/
 
 ```
+
+

@@ -1,3 +1,15 @@
+- [安装rosbridge](#安装rosbridge)
+- [catkin build](#catkin-build)
+- [rtk2](#rtk2)
+  - [环境配置](#环境配置)
+  - [海拔高度](#海拔高度)
+- [雷达配置](#雷达配置)
+  - [查找雷达ip](#查找雷达ip)
+  - [设置雷达ip](#设置雷达ip)
+  - [雷达ros环境配置](#雷达ros环境配置)
+- [其他命令](#其他命令)
+
+
 ## 安装rosbridge
 ```
 sudo apt-get install ros-<rosdistro>-rosbridge-server
@@ -16,6 +28,15 @@ sudo pip install catkin-tools
  sudo apt install -y build-essential cmake
  sudo apt install -y libeigen3-dev
  sudo apt install -y ros-noetic-tf ros-noetic-eigen-conversions
+```
+### 海拔高度
+```
+sudo apt-get update
+sudo apt-get install libgeographic-dev
+sudo apt install geographiclib-tools
+sudo geographiclib-get-geoids egm2008-1
+rostopic echo /fixposition/navsatfix_mining
+
 ```
 ## 雷达配置
 ### 查找雷达ip
@@ -47,7 +68,7 @@ sudo apt install -y         \
     
 
 ```
-# 其他命令
+## 其他命令
 ```
 roslaunch ouster_ros driver.launch sensor_hostname:=192.168.100.2
 roslaunch fixposition_driver_ros1 tcp.launch

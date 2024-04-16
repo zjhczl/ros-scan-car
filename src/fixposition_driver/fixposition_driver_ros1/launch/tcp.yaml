@@ -1,5 +1,5 @@
 fp_output:
-    formats: ["ODOMETRY", "LLH", "RAWIMU", "CORRIMU", "GPGGA", "GPZDA", "GPRMC", "TF"]
+    formats: ["ODOMETRY", "LLH", "LLH_MINING", "RAWIMU", "CORRIMU", "GPGGA", "GPZDA", "GPRMC", "TF"]
     type: tcp
     port: "21000"
     ip: "192.168.1.55" # change to VRTK2's IP address in the network
